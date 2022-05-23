@@ -23,5 +23,5 @@ application.use('/inventario', require('./router/inventario'));
 
 
 application.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`Index listening on port ${port}`)
   })
