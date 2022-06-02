@@ -5,10 +5,10 @@ const estadoEquipo = require('./models/EstadoEquipo');
 const marca = require('./models/Marca');
 const usuario = require('./models/Usuario');
 const inventario = require('./models/Inventario');
-
+require('dotenv').config();
 
 const application = express();
-const port = 4000;
+const port = process.env.port;
 
 
 getConnection();
