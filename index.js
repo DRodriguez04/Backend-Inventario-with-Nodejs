@@ -6,6 +6,7 @@ const marca = require('./models/Marca');
 const usuario = require('./models/Usuario');
 const inventario = require('./models/Inventario');
 require('dotenv').config();
+const cors = require('cors');
 
 const application = express();
 const port = process.env.port;
