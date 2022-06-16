@@ -1,5 +1,6 @@
 const{Router} = require('express');
 const Marca = require('../models/Marca');
+const { validateMark } = require('../helpers/validate-mark');
 
 const router = Router();
 
