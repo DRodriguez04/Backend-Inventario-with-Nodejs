@@ -1,4 +1,4 @@
-const req = require("express/lib/request");
+//const req = require("express/lib/request");
 
 const validateInventory = (req) => {
     const validaciones = [];
@@ -43,6 +43,7 @@ const validateInventory = (req) => {
         validaciones.push('required equipment status');
     }
 
+    return validaciones;
 }
 
 module.exports = {

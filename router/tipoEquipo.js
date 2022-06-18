@@ -18,19 +18,19 @@ router.get('/', async function(req, res){
 router.post('/', async function(req, res){
     try{
 
-        const validations = validateTipoEquipo(req);
+        const validaciones = validateTipoEquipo(req);
 
-        if(validations.length > 0){
-            return res.status(400).send(validations);
+        if(validaciones.length > 0){
+            return res.status(400).send(validaciones);
         }
         
         console.log(req.body);
 
-        const clasificacion = await TipoEquipo.findOne({nombre: req.body.nombre});
+        /*const clasificacion = await TipoEquipo.findOne({nombre: req.body.nombre});
         console.log(clasificacion);
         if(clasificacion){
             return res.status(400).send('classification not found');
-        }
+        }*/
        
     
     let tipo = new TipoEquipo();

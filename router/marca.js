@@ -17,10 +17,10 @@ router.get('/', async function(req, res){
 
 router.post('/', async function(req, res){
     try{
-        const validations = validateMark(req);
+        const validaciones = validateMark(req);
 
-        if(validations.length > 0){
-            return res.status(400).send(validations);
+        if(validaciones.length > 0){
+            return res.status(400).send(validaciones);
         }
 
         console.log(req.body);

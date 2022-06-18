@@ -29,10 +29,10 @@ router.get('/', async function(req, res){
 
 router.post('/', async function(req, res){
     try{
-        const validations = validateInventory(req);
+        const validaciones = validateInventory(req);
 
-        if(validations.length > 0){
-            return res.status(400).send(validations);
+        if(validaciones.length > 0){
+            return res.status(400).send(validaciones);
         }
 
         const existeInventariosPorSerial = await Inventario.findOne({serial: req.body.serial});

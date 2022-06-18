@@ -11,7 +11,7 @@ const cors = require('cors');
 const application = express();
 const port = process.env.port;
 
-application.use(cors())
+application.use(cors());
 
 getConnection();
 

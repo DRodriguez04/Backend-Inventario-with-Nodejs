@@ -1,4 +1,4 @@
-const req = require("express/lib/request");
+//const req = require("express");
 
 const validateUser = (req) => {
     const validaciones = [];
@@ -14,6 +14,8 @@ const validateUser = (req) => {
     if(!req.body.estado){
         validaciones.push('required status');
     }
+
+    return validaciones;
 }
 
 module.exports ={

@@ -10,6 +10,8 @@ const validateMark = (req) => {
     if(req.body.estado){
         validaciones.push('required status')
     }
+
+    return validaciones;
 }
 
 module.exports = {
