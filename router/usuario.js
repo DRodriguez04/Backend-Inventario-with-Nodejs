@@ -48,6 +48,19 @@ router.get('/', async function(req, res){
     }
 });
 
+router.get('/:usuarioId', async function(req, res){
+    try{
+        const usuario = await Usuario.findById(req.params.usuarioId);
+        if(!usuario){
+            return res.status(400).send('Does not exists that user');
+        }
+        res.send(usuario);
+    }catch(error){
+        console.log(error);
+        res.status(500).send('an error occurred with server');
+    }
+});
+
 router.put('/:usuarioId', async function(req, res){
     try{
 

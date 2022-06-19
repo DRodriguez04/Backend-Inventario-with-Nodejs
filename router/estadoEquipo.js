@@ -15,6 +15,20 @@ router.get('/', async function(req, res){
     }
 });
 
+router.get('/:estadoEquipoId', async function(req, res){
+    try{
+        const estadoEquipo = await EstadoEquipo.findById(req.params.estadoEquipoId);
+        if(!estadoEquipo){
+            return res.status(400).send('Does not exists equipment status')
+        }
+        res.send(estadoEquipo);
+    }catch(error){
+        console.log(error);
+        res.status(500).send('an error occurred with server');
+    }
+    
+});
+
 router.post('/', async function(req, res){
     try{
         const validaciones = validateEstadoEquipo(req);
@@ -66,6 +80,6 @@ router.put('/:estadoEquipoId', async function(req, res){
         console.log(error);
         res.status(500).send('an error occurred with server');
     }
-});
+})
 
 module.exports = router;

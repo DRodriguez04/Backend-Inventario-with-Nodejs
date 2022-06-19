@@ -15,6 +15,19 @@ router.get('/', async function(req, res){
     }
 });
 
+router.get('/:tipoEquipoId', async function(req, res){
+    try{
+        const tipoEquipos = await TipoEquipo.findById(req.params.tipoEquipoId);
+        if(!tipoEquipos){
+            return res.status(400).send('Does not exists type of equipment ')
+        }
+        res.send(tipoEquipos);
+    }catch(error){
+        console.log(error);
+        res.status(500).send('an error occurred with server');
+    }
+});
+
 router.post('/', async function(req, res){
     try{
 

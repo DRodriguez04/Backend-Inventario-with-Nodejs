@@ -15,6 +15,20 @@ router.get('/', async function(req, res){
     
 });
 
+router.get('/:marcaId', async function(req, res){
+    try{
+        const marca = await Marca.findById(req.params.marcaId);
+        if(!marca){
+            return res.status(400).send('Does not exists mark')
+        }
+        res.send(marca);
+    }catch(error){
+        console.log(error);
+        res.status(500).send('an error occurred with server');
+    }
+    
+});
+
 router.post('/', async function(req, res){
     try{
         const validaciones = validateMark(req);
