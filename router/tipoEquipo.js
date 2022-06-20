@@ -17,6 +17,7 @@ router.get('/', async function(req, res){
 
 router.get('/:tipoEquipoId', async function(req, res){
     try{
+        console.log(req.params.tipoEquipoId);
         const tipoEquipos = await TipoEquipo.findById(req.params.tipoEquipoId);
         if(!tipoEquipos){
             return res.status(400).send('Does not exists type of equipment ')

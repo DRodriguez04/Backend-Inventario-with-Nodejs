@@ -6,6 +6,7 @@ const router = Router();
 
 router.get('/', async function(req, res){
     try{
+        
         const marcas = await Marca.find();
         res.send(marcas);
     }catch(error){
@@ -17,6 +18,7 @@ router.get('/', async function(req, res){
 
 router.get('/:marcaId', async function(req, res){
     try{
+        console.log(req.params.marcaId);
         const marca = await Marca.findById(req.params.marcaId);
         if(!marca){
             return res.status(400).send('Does not exists mark')

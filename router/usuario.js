@@ -50,6 +50,7 @@ router.get('/', async function(req, res){
 
 router.get('/:usuarioId', async function(req, res){
     try{
+        console.log(req.params.usuarioId);
         const usuario = await Usuario.findById(req.params.usuarioId);
         if(!usuario){
             return res.status(400).send('Does not exists that user');
